@@ -3,10 +3,7 @@ using EmployeeLeaveManagementSystemAPI.Domain.DTOs.Auth;
 using EmployeeLeaveManagementSystemAPI.Domain.Entities;
 using EmployeeLeaveManagementSystemAPI.Domain.Enum;
 using EmployeeLeaveManagementSystemAPI.Domain.Interfaces;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+
 
 namespace EmployeeLeaveManagementSystemAPI.Services
 {
@@ -95,33 +92,33 @@ namespace EmployeeLeaveManagementSystemAPI.Services
                 Expiration = DateTime.Now.AddHours(2)
             };
         }
-            private string GenerateToken(User user)
-            {
-            var claims = new[]
+        //    private string GenerateToken(User user)
+        //    {
+        //    var claims = new[]
 
-            {
-                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                 new Claim(ClaimTypes.Name, user.Email),
-                 new Claim(ClaimTypes.Role, user.Role.ToString())
+        //    {
+        //         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        //         new Claim(ClaimTypes.Name, user.Email),
+        //         new Claim(ClaimTypes.Role, user.Role.ToString())
                 
-             };
+        //     };
 
-            var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])
-            );
+        //    var key = new SymmetricSecurityKey(
+        //        Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])
+        //    );
 
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        //    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:DurationInMinutes"])),
-                signingCredentials: creds
-            );
+        //    var token = new JwtSecurityToken(
+        //        issuer: _configuration["Jwt:Issuer"],
+        //        audience: _configuration["Jwt:Audience"],
+        //        claims: claims,
+        //        expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:DurationInMinutes"])),
+        //        signingCredentials: creds
+        //    );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
+        //    return new JwtSecurityTokenHandler().WriteToken(token);
+        //}
 
        
     }
