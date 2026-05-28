@@ -32,7 +32,7 @@ This project is a backend system built using ASP.NET Core Web API for managing e
 ### ⚙️ Setup Instructions
 
 ### 1. Clone the project
-git clone <your-repo-url>
+git clone (https://github.com/ankushv1499/EmployeeLeaveManagementSystemAPI.git)
 
 ---
 

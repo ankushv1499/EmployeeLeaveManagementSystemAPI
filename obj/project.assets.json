@@ -3537,7 +3537,6 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Azure.Identity >= 1.10.3",
       "BCrypt.Net-Next >= 4.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.5",
@@ -3602,10 +3601,6 @@
         "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
-          "Azure.Identity": {
-            "target": "Package",
-            "version": "[1.10.3, )"
-          },
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.2.0, )"
