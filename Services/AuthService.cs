@@ -32,7 +32,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
 
             if (existingUser != null)
             {
-                throw new Exception("User already exists");
+                throw new ArgumentException("User already exists");
             }
 
             // Create User
@@ -66,7 +66,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
 
             if (user == null)
             {
-                throw new Exception("Invalid email");
+                throw new KeyNotFoundException("User Not Found");
             }
 
             // Verify Password
@@ -77,7 +77,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
 
             if (!isPasswordValid)
             {
-                throw new Exception("Invalid password");
+                throw new UnauthorizedAccessException("Invalid password");
             }
 
             // Generate JWT Token

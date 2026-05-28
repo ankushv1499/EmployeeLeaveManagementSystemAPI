@@ -55,7 +55,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
 
             if (leave == null)
             {
-                throw new Exception("Leave request not found");
+                throw new KeyNotFoundException("Leave request not found");
             }
 
             leave.Status = LeaveStatus.Approved;
@@ -71,7 +71,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
 
             if (leave == null)
             {
-                throw new Exception("Leave request not found");
+                throw new KeyNotFoundException("Leave request not found");
             }
 
             leave.Status = LeaveStatus.Rejected;

@@ -22,7 +22,7 @@ namespace EmployeeLeaveManagementSystemAPI.Services
             // Date Validation
             if (dto.StartDate > dto.EndDate)
             {
-                throw new Exception(
+                throw new ArgumentException(
                     "Start date cannot be greater than end date");
             }
 
