@@ -1,4 +1,5 @@
 using EmployeeLeaveManagementSystemAPI.DataAcess.Context;
+using EmployeeLeaveManagementSystemAPI.Middleware;
 using EmployeeLeaveManagementSystemAPI.DataAcess.Repositories;
 using EmployeeLeaveManagementSystemAPI.Domain.Interfaces;
 using EmployeeLeaveManagementSystemAPI.Services;
@@ -95,7 +96,7 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 
 //Middleware
-app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 
 //  Authenticate user (check token)

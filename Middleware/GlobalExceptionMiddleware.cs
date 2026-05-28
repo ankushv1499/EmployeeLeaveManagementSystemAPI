@@ -68,7 +68,7 @@ namespace EmployeeLeaveManagementSystemAPI.Middleware
 
             context.Response.StatusCode = (int)statusCode;
 
-            var response = new ApiResponse
+            var response = new ApiResponse<Object>
             {
                 Success = false,
                 Message = message,
